@@ -1,0 +1,26 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+const {title} = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/reepolee.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+  		<ViewTransitions />
+	</head>
+	<body class="py-8">
+		<nav class="flex items-end flex-wrap px-8 text-xl" >
+			<a class=`w-24 text-center ${currentPath=='/' ? 'font-bold' : ''}`   href="/">Home</a>
+			<a class=`w-24 text-center ${currentPath.includes('about') ? 'font-bold' : ''}` href="/about">About</a>
+			<a class=`w-24 text-center ${currentPath.includes('login') ? 'font-bold' : ''}` href="/login">Login</a>
+		</nav>
+		<main class="py-8">
+			<slot />
+		</main>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "astro-3-with-optimized-image",
+  "type": "module",
+  "version": "0.0.3",
+  "author": {
+    "name": "Aleš Vaupotič",
+    "email": "ales@reepolee.com",
+    "url": "https://github.com/alesvaupotic/"
+  },
+  "description": "Optimized images for Astro 3 template",
+  "private": false,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "5.0.0",
+    "astro": "3.0.2",
+    "sharp": "^0.32.5",
+    "tailwindcss": "3.3.3"
+  }
+}
