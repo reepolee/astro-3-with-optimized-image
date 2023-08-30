@@ -31,4 +31,4 @@ import img1 from "./reepolee-labs.jpg";
 
 ## What it does
 
-Images get generated in predefined widths from `.env` in `webp` and `avif` formats. Fallback is the original image. We set up a `srcset` ofr every image but you're in full control of your sizes, just adjust the prop.
+Images get generated in predefined widths from `.env` in `webp` and `avif` formats. Fallback is the original image. We set up a `srcset` for every image but you're in full control of your sizes on different pages, just adjust the prop.
