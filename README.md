@@ -1,6 +1,8 @@
-# Astro Optimized Image
+# Astro 3 Optimized Images Template
 
-# Set Up
+## This is Work in Progress, use with caution
+
+## Set Up
 
 1. Copy `.env.example` to `.env`.
 2. Adjust widths in `.env` to your liking. Defaults are 100, 300, 900 and 1800 pixels. 
@@ -26,3 +28,7 @@ import img1 from "./reepolee-labs.jpg";
 </Layout>
 
 ```
+
+## What it does
+
+Images get generated in predefined widths from `.env` in `webp` and `avif` formats. Fallback is the original image. We set up a `srcset` ofr every image but you're in full control of your sizes, just adjust the prop.
