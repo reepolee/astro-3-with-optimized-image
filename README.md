@@ -3,7 +3,7 @@
 # Set Up
 
 1. Copy `.env.example` to `.env`.
-2. Adjust widths in `.env` to your liking. Defaults are 100, 300, 900, 1800 pixels. 
+2. Adjust widths in `.env` to your liking. Defaults are 100, 300, 900 and 1800 pixels. 
 3. Use in pages like:
 
 ```js
