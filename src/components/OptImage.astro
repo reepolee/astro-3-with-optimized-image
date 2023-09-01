@@ -1,31 +1,42 @@
 ---
-import { Image, getImage } from "astro:assets";
+import { getImage } from "astro:assets";
 const _image_sizes = import.meta.env.IMAGE_SIZES;
 const image_sizes = _image_sizes.split(",");
-const {src, sizes, alt, class: _class} = Astro.props;
+const { src, sizes, alt, class: _class } = Astro.props;
 
 let resized_images = [];
-let srcset="";
+let srcset = "";
 
 async function set_files() {
     for (const image_size of image_sizes) {
-        const _optimized_avif = await getImage({src, format: 'avif', width:+image_size })
+        const _optimized_avif = await getImage({
+            src,
+            format: "avif",
+            width: +image_size,
+        });
         resized_images.push(_optimized_avif);
-        srcset=srcset+_optimized_avif.src+" "+_optimized_avif.attributes.width+"w, ";
-        const _optimized_webp = await getImage({src, format: 'webp', width:+image_size })
+        srcset =
+            srcset +
+            _optimized_avif.src +
+            " " +
+            _optimized_avif.attributes.width +
+            "w, ";
+        const _optimized_webp = await getImage({
+            src,
+            format: "webp",
+            width: +image_size,
+        });
         resized_images.push(_optimized_webp);
-        srcset=srcset+_optimized_webp.src+" "+_optimized_webp.attributes.width+"w, ";
+        srcset =
+            srcset +
+            _optimized_webp.src +
+            " " +
+            _optimized_webp.attributes.width +
+            "w, ";
     }
 }
 
 await set_files();
 ---
 
-<img 
-    {srcset} 
-    src={src.src}
-    {sizes}
-    {alt}
-    class={_class}
->
-
+<img {srcset} src={src.src} {sizes} {alt} class={_class} />
